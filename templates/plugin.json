@@ -1,0 +1,19 @@
+{
+    "name": "@NAME@",
+    "description": "Plugin description.",
+    "version": "0.0.1",
+    "keywords": ["piwik", "plugin"],
+    "homepage": "http://github.com/halfdan/piwik-feedannotation-plugin",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "@AUTHOR@",
+            "email": "@EMAIL@",
+            "homepage": "@WEBSITE@"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "translationAvailable": true
+}
