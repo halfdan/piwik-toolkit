@@ -1,13 +1,13 @@
 <?php
 /**
- * Piwik Plugin Generator
+ * Piwik Toolkit
  *
  * This file builds the PHP Archive for the library.
  * Execute with: php -d phar.readonly=0 build.php
  */
 
 // Name of the result phar
-$pharName = "plugin.phar";
+$pharName = "piwik-toolkit.phar";
 
 try
 {
