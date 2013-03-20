@@ -2,6 +2,12 @@
 
 This tool can be used to automatically generate a plugin stub for [Piwik](http://piwik.org) 2.x. It generates all the necessary files for you to get started with building a Piwik plugin.
 
+Piwik Toolkit is modular and can easily be extended with new commands.
+
+## Requirements
+
+Piwik Toolkit is built using namespaces and PHP archives which require at least PHP 5.3.
+
 ## Installation
 
 You can build the Piwik Toolkit yourself if you are using PHP 5.3 or higher. This can be done in two simple steps.
