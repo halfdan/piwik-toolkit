@@ -1,7 +1,7 @@
 <?php
-namespace Piwik\Generator;
+namespace Piwik\Toolkit\Command;
 
-class Plugin implements Generator
+class Plugin implements Command
 {
 	private $name;
 	private $author = "Author";
@@ -9,22 +9,22 @@ class Plugin implements Generator
 	private $version = "0.0.1";
 	private $desciption = "Description";
 
-	/**
-	 * Create new plugin generator.
-	 *
-	 * @param $options array Command line options
-	 */
-	public function __construct(array $options)
+	public function execute()
 	{
-
+		
 	}
 
-	public function execute()
+	public function new($name, $version = '0.0.1', $author = "Author", $email = "user@example.com")
 	{
 		generatePluginDefinition();
 	}
 
-	public function getOptions()
+	public function help()
+	{
+
+	}
+
+	public function list()
 	{
 
 	}
