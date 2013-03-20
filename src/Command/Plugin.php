@@ -7,7 +7,7 @@ class Plugin implements Command
 	private $author = "Author";
 	private $email = "user@example.com"
 	private $version = "0.0.1";
-	private $desciption = "Description";
+	private $description = "Description";
 
 	public function execute()
 	{
