@@ -30,19 +30,27 @@ class CommandManager
 
 	private function getCommandDescription($command)
 	{
-
+        $this->loadCommand($command);
 	}
 
-	private function loadCommand($command)
+    /**
+     * Loads a single command from its file in Command/
+     *
+     * @param $command Name of the command to load.
+     * @throws \Exception if failed to load command.
+     */
+    private function loadCommand($command)
 	{
-		$path = sprintf("%s/Command", __DIR__);
-		$fileName = sprintf("%s/%s.php", $path, $command);
+        $baseName = 'Piwik\Toolkit\Command';
+		$className = sprintf('%s\%s', $baseName, $command);
 
-		if(!file_exists($fileName)) {
-			throw new Exception("Command %s unknown.", $command);
-		}
-		$reflect = new \ReflectionClass("Name");
-		$methods = $reflect->getMethods(\ReflectionMethod::IS_PUBLIC);
+        try
+        {
+            $reflect = new \ReflectionClass($className);
+        } catch (\Exception $ex) {
+            throw $ex;
+        }
+		//$methods = $reflect->getMethods(\ReflectionMethod::IS_PUBLIC);
 		// Sort by name
 
 		// Get description
@@ -51,9 +59,21 @@ class CommandManager
 
 	}
 
-	private function loadAvailableCommands()
+    /**
+     * Loads available commands by searching in Command/ directory.
+     */
+    private function loadAvailableCommands()
 	{
-		$commandList = glob(sprintf("%s/Command/*.php", __DIR__));
+        $commandList = array();
+		$dirIterator = new \DirectoryIterator(sprintf("%s/Command/", __DIR__));
+		foreach($dirIterator as $fileInfo)
+		{
+            $commandName = $fileInfo->getBaseName(".php");
+            if ($commandName != "Command")
+            {
+                $commandList[] = $commandName;
+            }
+		}
 		$this->commands = $commandList;
 	}
 }

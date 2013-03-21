@@ -1,11 +1,11 @@
 <?php
 namespace Piwik\Toolkit\Command;
 
-class Plugin implements Command
+class Plugin extends Command
 {
 	private $name;
 	private $author = "Author";
-	private $email = "user@example.com"
+	private $email = "user@example.com";
 	private $version = "0.0.1";
 	private $description = "Description";
 
@@ -14,7 +14,7 @@ class Plugin implements Command
 		
 	}
 
-	public function new($name, $version = '0.0.1', $author = "Author", $email = "user@example.com")
+	public function create($name, $version = '0.0.1', $author = "Author", $email = "user@example.com")
 	{
 		generatePluginDefinition();
 	}
@@ -24,7 +24,7 @@ class Plugin implements Command
 
 	}
 
-	public function list()
+	public function show()
 	{
 
 	}
