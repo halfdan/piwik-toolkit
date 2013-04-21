@@ -27,4 +27,7 @@ You will now have a file called `piwik-toolkit.phar` that you can execute by typ
 
 ToDo
 
-## Contribution
+## Contribute
+
+If you would like to contribute to this project, please consider sending a pull request! 
+
